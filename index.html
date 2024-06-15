@@ -8,7 +8,54 @@
 <body>
     <script>
 
-        
+        let humanScore = 0;
+        let computerScore = 0;
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        function getComputerChoice() {
+            pickChoice = Math.floor(Math.random() * 3) + 1;
+
+            switch (pickChoice) {
+                case 1:
+                    return 'rock';
+                    break;
+                case 2:
+                    return 'paper';
+                    break;
+                case 3:
+                    return 'scissors';
+            }
+        }
+
+        function getHumanChoice() {
+            humanPick = prompt('Choose rock, paper, or scissors')
+
+            if (humanPick.toLowerCase() === 'rock') {
+                return 'rock';
+            } else if (humanPick.toLowerCase() === 'paper') {
+                return 'paper';
+            } else if (humanPick.toLowerCase() === 'scissors') {
+                return 'scissors';
+            } else {
+                alert('Not a valid choice.');
+            }
+        }
+
+        function playRound(humanChoice, computerChoice) {
+            result = humanChoice + computerChoice;
+
+            switch (result) {
+                case 'rockscissors':
+                case 'paperrock':
+                case 'scissorsrock':
+                    humanScore++
+            }
+
+            console.log(result)
+        }
+
+        playRound(humanSelection, computerSelection);
 
     </script>
 </body>
