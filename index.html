@@ -47,12 +47,40 @@
 
             switch (result) {
                 case 'rockscissors':
+                    humanScore++;
+                    console.log('You win! Rock beats scissors');
+                    break;
                 case 'paperrock':
+                    humanScore++;
+                    console.log('You win! Paper beats Rock');
+                    break;
+                case 'scissorspaper':
+                    humanScore++;
+                    console.log('You win! Scissors beats Paper');
+                    break;
+                case 'rockpaper':
+                    computerScore++;
+                    console.log('You lose! Paper beats Rock');
+                    break;
+                case 'paperscissors':
+                    computerScore++;
+                    console.log('You lose! Scissors beats Paper');
+                    break;
                 case 'scissorsrock':
-                    humanScore++
+                    computerScore++;
+                    console.log('You lose! Rock beats Scissors');
+                    break;
+                case 'rockrock':
+                case 'paperpaper':
+                case 'scissorsscissors':
+                    humanScore++;
+                    console.log('It\'s a draw!');
+                    break;
             }
 
-            console.log(result)
+            console.log(humanScore);
+            console.log(computerScore);
+            console.log(result);
         }
 
         playRound(humanSelection, computerSelection);
